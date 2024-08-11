@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./sass/main.css">
+    <link rel="shortcut icon" href="./images/weather-app.png" type="image/x-icon">
+    <title>Weather.com</title>
+</head>
+<body>
+    <section class="wrapper">
+        <header>
+            <div class="title">
+                <div class="city-name">Nukus</div>
+                <div class="now-date">Sat 11-Aug 2024 | 12:00</div>
+                
+            </div>
+            <form>
+                <input id="input" type="text" placeholder="Enter the city name">
+                <button class="btn" type="submit"><i class='bx bx-search'></i></button>
+            </form>
+        </header>
+        <main> 
+            <div class="main-cont">
+                <div class="top-cont">
+                    <div class="about-temp">
+                        <div class="img">
+                            <img id="icon" src="./images/sun-2.png" alt="">
+                        </div>
+                        <div class="temp-des">
+                            <div  class="temp"><span id="temp">00</span>°C</div>
+                            <div id="description" class="description">clear sky</div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="feels">
+                            <i class='bx bxs-thermometer'></i>
+                             Feels like: 
+                            <span>
+                                <span id="feels">50</span>
+                                °C
+                            </span>
+                        </div>
+                        <div class="humidity">
+                            <i class='bx bxs-droplet'></i>
+                            Humidity: 
+                            <span> <span id="humidity">20</span>%</span>
+                        </div>
+                        <div class="wind">
+                            <i class='bx bx-wind'></i>
+                            Wind:
+                            <span><span id="wind">12</span>km/h</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom-cont" class="bottom-cont">
+                    <!--  -->
+                </div>
+            </div>
+        </main>
+    </section>
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
+
+<!-- sass ./sass/main.scss ./sass/main.css --watch -->

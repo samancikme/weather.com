@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat' , sans-serif;
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/bg-img.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.wrapper{
+    width: 90%;
+    height: max-content;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(6.2px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 15px 30px;
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title{
+            padding: 15px;
+            color: rgb(13, 52, 111);
+            .city-name{
+                font-size: 40px;
+                font-weight: 700;
+            }
+            .now-date{
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        form{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 40%;
+            position: relative;
+            input{
+                border: 1px solid wheat;
+                border-radius: 18px;
+                padding: 8px 20px;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(5px);
+                outline-color:rgb(238, 247, 177);
+                font-size: 14px;
+            }
+            .btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                background-color: transparent;
+                border: transparent;
+                border-radius: 100%;
+                cursor: pointer;
+                position: absolute;
+                right: 5px;
+            }
+
+        }
+    }
+    main{
+        .main-cont{
+            display: flex;
+            justify-content: start;
+            // align-items: center;
+            flex-direction: column;
+            .top-cont{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+                border-radius: 15px;
+                padding: 20px 10px;
+                .about-temp{
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 200px;
+                        height: 200px;
+                    }
+                    .temp{
+                        justify-content: center;
+                        display: flex;
+                        color: rgb(16, 105, 105);
+                        span{
+                            font-size: 100px;
+                        }
+                        font-size: 40px;
+                        font-weight: 800;
+                    }
+                    .description{
+                        font-size:20px;
+                        font-weight: 500;
+                    }
+                }
+
+
+                .details{
+                    width: 100%;
+                    text-align: center;
+                    display: grid;
+                    grid-template-columns: repeat(3 , 1fr);
+                    font-size: 20px;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+            }
+            .bottom-cont{
+                width: 100%;
+                display: flex;
+                // grid-template-columns:repeat(10 , 1fr);
+                align-items: center;
+                justify-content: start;
+                overflow-x: scroll;
+                gap: 10px;
+                .card{
+                    height: 200px;
+                    min-width: 125px;
+                    padding: 10px 0;
+                    border: 1px solid transparent;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background: rgba(255, 255, 255, 0.19);
+                    backdrop-filter: blur(20px);
+                    margin-bottom: 5px;
+                    font-weight: 500;
+                    gap: 2px;
+                    .time{
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                    .temp{
+                        font-weight: 700;
+                        font-size: 20px;
+                    }
+                    .description{
+                        font-size: 12px;
+                    }
+                    img{
+                        max-width: 90px;
+                        max-height: 90px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 37, 37, 0.607);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    .spinner {
+        border: 16px solid  #a2a2a2;
+        border-top: 16px solid #624122d8;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 1.5s cubic-bezier(0.45, 0.08, 1, 1) infinite;
+    }
+}
+
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+    margin-top: 5px;
+    width: 1px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #595959;
+    border-radius: 5px;
+
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+@media screen and (max-width:768px) {
+    main{
+        .main-cont{
+            .top-cont{
+                gap: 10px;
+                padding: 20px 10px;
+                .about-temp{
+                    gap: 50px;
+                    img{
+                        width: 200px;
+                        height: 200px;
+                    }
+                    .temp{
+                        span{
+                            font-size: 100px;
+                        }
+                        font-size: 40px;
+                        font-weight: 800;
+                    }
+                    .description{
+                        font-size:20px;
+                        font-weight: 500;
+                    }
+                }
+
+
+                .details{
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    gap: 30px;
+                    font-size: 20px;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:650px) {
+    .wrapper{
+        padding: 15px 30px;
+    
+        header{
+            .title{
+                flex: 1;
+                padding: 15px;
+                .city-name{
+                    font-size: 35px;
+                }
+                .now-date{
+                    font-size: 14px;
+                }
+            }
+    
+            form{
+                width: 100%;
+                flex: 1;
+                input{
+                    padding: 8px 10px;
+                    font-size: 14px;
+                }
+                .btn{
+                    font-size: 28px;
+                    right: 5px;
+                }
+    
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:570px) {
+    .wrapper{
+        padding: 15px 30px;
+    
+        header{
+            flex-direction: column-reverse;
+
+            .title{
+                text-align: center;
+                flex: 1;
+                padding: 15px;
+                .city-name{
+                    font-size: 40px;
+                }
+                .now-date{
+                    font-size: 14px;
+                }
+            }
+    
+            form{
+                width: 100%;
+                flex: 1;
+                input{
+                    padding: 8px 10px;
+                    font-size: 14px;
+                }
+                .btn{
+                    font-size: 28px;
+                    right: 5px;
+                }
+    
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .wrapper{
+        padding: 20px 10px;
+    }
+    main{
+        .main-cont{
+            .top-cont{
+                width: 100%;
+                .about-temp{
+                    gap: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .img{
+                        img{
+                            max-width: 130px;
+                            max-height: 130px;
+                        }
+                    }
+                    .temp-des{
+                        .temp{
+                            span{
+                                font-size: 80px;
+                            }
+                            font-size: 40px;
+                            font-weight: 800;
+                        }
+                        .description{
+                            font-size:20px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+
+                .details{
+                    width: 100%;
+                    gap: 5px;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    padding: 0;
+                    div{
+                        font-size: 15px;
+                        border: 1px solid rgba(114, 114, 114, 0.505);
+                        border-radius: 10px;
+                        padding: 5px 0;
+                    }
+                    span{
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
